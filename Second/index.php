@@ -1,11 +1,13 @@
 <?php
-require_once 'Calculator.php.php';
-
+require_once 'utils/Calculator.php';
+$html="";
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['estimated_car_value'], $_POST['tax_percentage'], $_POST['instalments'])) {
     $estimated_car_value = (int) $_POST['estimated_car_value'];
     $tax_percentage = (int) $_POST['tax_percentage'];
     $instalments = (int) $_POST['instalments'];
+    $calculate = new Calculate($estimated_car_value,$tax_percentage,$instalments);
 }
+
 ?>
 
 
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['estimated_car_value'],
 </head>
 <body>
 <br>
-<div class="container d-flex h-100">
+<div class="container">
 <div class="row align-items-center h-100">
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         Estimated value of the car (100 - 100 000 EUR): <input type="number" name="estimated_car_value" value=""
@@ -48,7 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['estimated_car_value'],
         <input type="submit" name="submit" value="Calculate">
     </form>
 </div>
-</div>
+  </div>
+
 
 </body>
 </html>
