@@ -7,7 +7,7 @@
 class Calculate
 {
 
-    private $commissionRate = 17;
+    private $commission_rate = 17;
 
     /**
      * Doing Date time conditions
@@ -36,7 +36,7 @@ class Calculate
         $result = "";
         try {
             $base_premium = $estimated_car_value * ($this->rate / 100); // Calculating by the premium percentage
-            $commission = $base_premium * ($this->commissionRate / 100);
+            $commission = $base_premium * ($this->commission_rate / 100);
             $total_tax = $base_premium * ($tax_percentage / 100);
             $total_cost = ($base_premium + $commission + $total_tax);
             $result = $this->createHtml($base_premium, $commission, $total_tax, $total_cost, $instalments, $estimated_car_value, $tax_percentage);

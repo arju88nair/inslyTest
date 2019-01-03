@@ -2,10 +2,10 @@
 
 This repo consist of 3 different tasks.
 
-## First ->
+## First 
     To write my name using loops
 
-## Second ->
+## Second 
     A simple car insurance calculator based on the below conditions
 1 With these fields
 - Estimated value of the car (100 - 100 000 EUR)
@@ -31,5 +31,5 @@ does not divide equally
 - Grand totals (sum of all instalments): Price with commission and tax, total tax
 sum
 
-## Third ->
+## Third 
     An sql file with employee data
